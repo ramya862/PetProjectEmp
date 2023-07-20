@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\RAMYA\\source\\repos\\PetProject\\TestProject\\TestProject.csproj": {}
+    "C:\\Users\\RAMYA\\Desktop\\ProjectCRUD\\TestProject\\TestProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\RAMYA\\source\\repos\\PetProject\\PetProject\\PetProject.csproj": {
+    "C:\\Users\\RAMYA\\Desktop\\ProjectCRUD\\PetProject\\EmpCRUDPP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RAMYA\\source\\repos\\PetProject\\PetProject\\PetProject.csproj",
-        "projectName": "PetProject",
-        "projectPath": "C:\\Users\\RAMYA\\source\\repos\\PetProject\\PetProject\\PetProject.csproj",
+        "projectUniqueName": "C:\\Users\\RAMYA\\Desktop\\ProjectCRUD\\PetProject\\EmpCRUDPP.csproj",
+        "projectName": "EmpCRUDPP",
+        "projectPath": "C:\\Users\\RAMYA\\Desktop\\ProjectCRUD\\PetProject\\EmpCRUDPP.csproj",
         "packagesPath": "C:\\Users\\RAMYA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RAMYA\\source\\repos\\PetProject\\PetProject\\obj\\",
+        "outputPath": "C:\\Users\\RAMYA\\Desktop\\ProjectCRUD\\PetProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\RAMYA\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -121,14 +121,14 @@
         }
       }
     },
-    "C:\\Users\\RAMYA\\source\\repos\\PetProject\\TestProject\\TestProject.csproj": {
+    "C:\\Users\\RAMYA\\Desktop\\ProjectCRUD\\TestProject\\TestProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\RAMYA\\source\\repos\\PetProject\\TestProject\\TestProject.csproj",
+        "projectUniqueName": "C:\\Users\\RAMYA\\Desktop\\ProjectCRUD\\TestProject\\TestProject.csproj",
         "projectName": "TestProject",
-        "projectPath": "C:\\Users\\RAMYA\\source\\repos\\PetProject\\TestProject\\TestProject.csproj",
+        "projectPath": "C:\\Users\\RAMYA\\Desktop\\ProjectCRUD\\TestProject\\TestProject.csproj",
         "packagesPath": "C:\\Users\\RAMYA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\RAMYA\\source\\repos\\PetProject\\TestProject\\obj\\",
+        "outputPath": "C:\\Users\\RAMYA\\Desktop\\ProjectCRUD\\TestProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\RAMYA\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -145,8 +145,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\RAMYA\\source\\repos\\PetProject\\PetProject\\PetProject.csproj": {
-                "projectPath": "C:\\Users\\RAMYA\\source\\repos\\PetProject\\PetProject\\PetProject.csproj"
+              "C:\\Users\\RAMYA\\Desktop\\ProjectCRUD\\PetProject\\EmpCRUDPP.csproj": {
+                "projectPath": "C:\\Users\\RAMYA\\Desktop\\ProjectCRUD\\PetProject\\EmpCRUDPP.csproj"
               }
             }
           }
@@ -169,13 +169,29 @@
               "target": "Package",
               "version": "[2.2.10, )"
             },
+            "MiNET": {
+              "target": "Package",
+              "version": "[1.0.2304, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.5.0, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.18.4, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
             "coverlet.collector": {
               "target": "Package",
               "version": "[3.2.0, )"
+            },
+            "xunit.extensibility.core": {
+              "target": "Package",
+              "version": "[2.5.0, )"
             }
           },
           "imports": [

@@ -15,10 +15,18 @@ using System.Linq;
 
 namespace CRUD.Logic
 {
-    public class EmpDomain
+    public interface DomainInterface
+    {
+        Task<IActionResult> CreateItem(HttpRequest req, string id, IAsyncCollector<dynamic> documentsOut);
+        Task<IActionResult> ReadItem(HttpRequest req, IEnumerable<dynamic> documents);
+        Task<IActionResult> ReadItemById(HttpRequest req, string id, Microsoft.Azure.Cosmos.Container documentContainer);
+        Task<IActionResult> UpdateItem(HttpRequest req, string id, Microsoft.Azure.Cosmos.Container documentContainer);
+        Task<IActionResult> DeleteItem(HttpRequest req, string id, Microsoft.Azure.Cosmos.Container documentContainer);
+    }
+    public class EmpDomain:DomainInterface
     {
 
-        public static async Task<IActionResult> CreateItem(HttpRequest req,string id, IAsyncCollector<dynamic> documentsOut)
+        public  async Task<IActionResult> CreateItem(HttpRequest req,string id, IAsyncCollector<dynamic> documentsOut)
         {
             string name = req.Query["name"];
             string Gender = req.Query["Gender"];
@@ -51,17 +59,17 @@ namespace CRUD.Logic
 
             return await EmpDAL.CreateItem(req, id,name, Gender,Age,Email,phone,DOB ,documentsOut);
         }
-        public static async Task<IActionResult> ReadItem(HttpRequest req, IEnumerable<dynamic> documents)
+        public  async Task<IActionResult> ReadItem(HttpRequest req, IEnumerable<dynamic> documents)
         {
             Log.Information("Getting all the items");
             return await EmpDAL.ReadItem(req, documents);
         }
 
-        public static async Task<IActionResult> ReadItemById(HttpRequest req, string id, Microsoft.Azure.Cosmos.Container documentContainer)
+        public  async Task<IActionResult> ReadItemById(HttpRequest req, string id, Microsoft.Azure.Cosmos.Container documentContainer)
         {
             if (string.IsNullOrEmpty(id))
             {
-                string responsemessage = "The id parameter is missing or invalid ";
+                string responsemessage = "The id parameter is missing or invalid";
                 return new BadRequestObjectResult(responsemessage);
             }
             Log.Information("Getting doc by id");
@@ -69,18 +77,18 @@ namespace CRUD.Logic
 
         }
 
-        public static async Task<IActionResult> UpdateItem(HttpRequest req, string id, Microsoft.Azure.Cosmos.Container documentContainer)
+        public  async Task<IActionResult> UpdateItem(HttpRequest req, string id, Microsoft.Azure.Cosmos.Container documentContainer)
         {
             if (string.IsNullOrEmpty(id))
             {
-                string responsemessage = "The id parameter is missing or invalid ";
+                string responsemessage = "The id parameter is missing or invalid";
                 return new BadRequestObjectResult(responsemessage);
             }
             Log.Information("Updating doc by Id");
             return await EmpDAL.UpdateItem(req, id, documentContainer);
         }
 
-        public static async Task<IActionResult> DeleteItem(HttpRequest req, string id, Microsoft.Azure.Cosmos.Container documentContainer)
+        public async Task<IActionResult> DeleteItem(HttpRequest req, string id, Microsoft.Azure.Cosmos.Container documentContainer)
         {
             if (string.IsNullOrEmpty(id))
             {
