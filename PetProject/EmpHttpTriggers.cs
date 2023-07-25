@@ -17,8 +17,8 @@ namespace Cosmosex
 {
     public class Httptriggers
     {
-        private const string DataBaseName = "Employee";
-        private const string CollectionName = "Details";
+        private const string DataBaseName = "Employees";
+        private const string CollectionName = "EmpDetails";
         private readonly CosmosClient _cosmosClient;
         private Microsoft.Azure.Cosmos.Container documentContainer;
         private readonly EmpDomain _empDomain;
@@ -27,7 +27,7 @@ namespace Cosmosex
         public Httptriggers(CosmosClient cosmosClient, EmpDomain empDomain)
         {
             _cosmosClient = cosmosClient;
-            documentContainer = _cosmosClient.GetContainer("Employee", "Details");
+            documentContainer = _cosmosClient.GetContainer("Employees", "EmpDetails");
             _empDomain = empDomain;
 
         }
